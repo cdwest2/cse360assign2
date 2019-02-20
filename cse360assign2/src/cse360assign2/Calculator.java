@@ -8,6 +8,7 @@ package cse360assign2;
 public class Calculator 
 {
 	private int total;
+	private String history = "0";
 	
 	//Initial constructor
 	public Calculator () 
@@ -23,16 +24,19 @@ public class Calculator
 	public void add (int value) 
 	{
 		total = total + value;
+		history += (" + " + value);
 	}
 	//Subtracts an int parameter from the total.
 	public void subtract (int value) 
 	{
 		total = total - value;
+		history += (" - " + value);
 	}
 	//Multiplies an int parameter by the total.
 	public void multiply (int value) 
 	{
 		total = total*value;
+		history += (" * " + value);
 	}
 	//Divides the total by an int parameter. 
 	public void divide (int value) 
@@ -45,11 +49,13 @@ public class Calculator
 		{
 			total = total/value;
 		}
+		history += (" / " + value);
 	}
-	//Returns a history of all calculations made in the form of a string. 
+	//Returns a history of all calculations made in the form of a string
+	//formatted similar to: "0 + 3 - 5 * 4".
 	public String getHistory () 
 	{
-		return "";
+		return history;
 	}
 }
 
